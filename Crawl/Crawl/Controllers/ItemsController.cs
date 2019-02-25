@@ -43,7 +43,7 @@ namespace Crawl.Controllers
 
             // Needs to get items from the server
 
-            var URLComponent = "GetItemList/";
+            var URLComponent = "GetItemListPost/";
 
             var DataResult = await HttpClientService.Instance.GetJsonGetAsync(WebGlobals.WebSiteAPIURL + URLComponent + parameter);
 
@@ -71,7 +71,7 @@ namespace Crawl.Controllers
         }
 
         // Asks the server for items based on paramaters
-        // Number is the number of items to return
+        // Number is th enumber of items to return
         // Level is the Value max for the items
         // Random is to have the value random between 1 and the Level
         // Attribute is a filter to return only items for that attribute, else unknown is used for any
@@ -88,7 +88,6 @@ namespace Crawl.Controllers
             // Needs to get items from the server
 
             var URLComponent = "GetItemListPost/";
-
 
             var dict = new Dictionary<string, string>
             {
@@ -114,7 +113,6 @@ namespace Crawl.Controllers
                 return new List<Item>();
             }
 
-
             // Then update the database
 
             // Use a foreach on myList
@@ -132,7 +130,6 @@ namespace Crawl.Controllers
 
             return myList;
         }
-
 
         // The returned data will be a list of items.  Need to pull that list out
         private List<Item> ParseJson(string myJsonData)
