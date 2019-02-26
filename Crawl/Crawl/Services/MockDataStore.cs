@@ -112,6 +112,7 @@ namespace Crawl.Services
         // Item
         public async Task<bool> InsertUpdateAsync_Item(Item data)
         {
+<<<<<<< HEAD
             // Check to see if the item exist
             var oldData = await GetAsync_Item(data.Id);
             if (oldData == null)
@@ -127,6 +128,9 @@ namespace Crawl.Services
                 await AddAsync_Item(data);
                 return true;
             }
+=======
+
+>>>>>>> origin/Server-Begin
 
             return false;
         }
