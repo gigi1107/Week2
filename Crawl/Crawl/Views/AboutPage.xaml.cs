@@ -141,7 +141,7 @@ namespace Crawl.Views
             // This will change out the DataStore to be the Mock Store if toggled on, or the SQL if off.
             GameGlobals.EnableCriticalHitDamage = e.Value;
         }
-                
+
         private async void ClearDatabase_Command(object sender, EventArgs e)
         {
             var answer = await DisplayAlert("Delete", "Sure you want to Delete All Data, and start over?", "Yes", "No");
@@ -168,13 +168,8 @@ namespace Crawl.Views
                 // The ServerItemValue Code stands for the batch of items to get
                 // as the group to request.  1, 2, 3, 100 (All), or if not specified All
 
-<<<<<<< HEAD
                 var value = Convert.ToInt32(ServerItemValue.Text);
                 myDataList = await ItemsController.Instance.GetItemsFromServer(value);
-=======
-                // 1. Take the value from ServerItemValue.Text, Convert to an ToInt32 and save it in a variable
-                // 2. set myDataList = await ItemsController.Instance.GetItemsFromServer passing the variable
->>>>>>> origin/Server-Begin
 
                 if (myDataList != null && myDataList.Count > 0)
                 {
@@ -185,15 +180,11 @@ namespace Crawl.Views
                     {
                         // Add them line by one, use \n to force new line for output display.
                         // Build up the output string by adding formatted Item Output
-<<<<<<< HEAD
                         myOutput += item.FormatOutput() + "\n";
-=======
-                        myOutput += "//implement call item formatter" + "\n";
->>>>>>> origin/Server-Begin
                     }
                 }
 
-                await DisplayAlert("Returned List", myOutput,"OK");
+                await DisplayAlert("Returned List", myOutput, "OK");
             }
         }
 
@@ -211,13 +202,7 @@ namespace Crawl.Views
 
             // will return shoes value 10 of speed.
             // Example  result = await ItemsController.Instance.GetItemsFromGame(1, 10, AttributeEnum.Speed, ItemLocationEnum.Feet, false, true);
-<<<<<<< HEAD
             myDataList = await ItemsController.Instance.GetItemsFromGame(number, level, attribute, location, random, updateDataBase);
-=======
-            //ItemsController.Instance.GetItemsFromGame(int number, int level, AttributeEnum attribute, ItemLocationEnum location, bool random, bool updateDataBase)
-
-            // Implement calling GetItemsFromGame into myDataList.  Remember to Await the call.
->>>>>>> origin/Server-Begin
 
             if (myDataList != null && myDataList.Count > 0)
             {
@@ -233,6 +218,5 @@ namespace Crawl.Views
 
             await DisplayAlert("Returned List", myOutput, "OK");
         }
-
     }
 }

@@ -16,7 +16,7 @@ namespace Crawl.Services
 
     public interface IDataStore
     {
-        Task<bool> InsertUpdateAsync_Item(Item data); 
+        Task<bool> InsertUpdateAsync_Item(Item data);
         Task<bool> AddAsync_Item(Item data);
         Task<bool> UpdateAsync_Item(Item data);
         Task<bool> DeleteAsync_Item(Item data);
@@ -39,12 +39,7 @@ namespace Crawl.Services
         Task<Monster> GetAsync_Monster(string id);
         Task<IEnumerable<Monster>> GetAllAsync_Monster(bool forceRefresh = false);
 
-        // Score
-        Task<bool> AddAsync_Score(Score Score);
-        Task<bool> InsertUpdateAsync_Score(Score item);
-        Task<bool> UpdateAsync_Score(Score Score);
-        Task<bool> DeleteAsync_Score(Score id);
-        Task<Score> GetAsync_Score(string id);
-        Task<IEnumerable<Score>> GetAllAsync_Score(bool forceRefresh = false);
+        // Implement Score
+
     }
 }
